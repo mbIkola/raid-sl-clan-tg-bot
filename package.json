@@ -4,7 +4,7 @@
     "description": "TG Bot for RaidShadowLegends grinding game to automate some clan activity",
     "main": "index.js",
     "scripts": {
-        "test": "npm run test",
+        "test": "NODE_OPTIONS=\"$NODE_OPTIONS --experimental-vm-modules\" npx jest",
         "lint": "eslint . ",
         "prettier": "prettier --write .",
         "test:watch": "jest --watch",
@@ -28,10 +28,12 @@
         "url": "https://github.com/mbIkola/raid-sl-clan-tg-bot/issues"
     },
     "homepage": "https://github.com/mbIkola/raid-sl-clan-tg-bot#readme",
-    "devDependencies": {
+    "type": "module",
+    "dependencies": {
         "@eslint/js": "^9.3.0",
         "eslint": "9.x",
-        "expressjs": "^1.0.1",
+        "eslint-config-prettier": "^9.1.0",
+        "express": "^4.19.2",
         "globals": "^15.3.0",
         "grammy": "^1.24.0",
         "husky": "^9.0.11",
@@ -43,7 +45,7 @@
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
     },
-    "dependencies": {
-        "eslint-config-prettier": "^9.1.0"
+    "devDependencies": {
+        "@jest/globals": "^29.7.0"
     }
 }
